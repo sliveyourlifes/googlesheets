@@ -6,14 +6,35 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <title>Customer Order System</title>
+      
+        <!-- Local Assets -->
+        <link rel="stylesheet" href="/styles.css">
+      
+        <!-- Google Sign-in library -->
+        <meta name="google-signin-scope" content="https://www.googleapis.com/auth/spreadsheets">
+        <meta name="google-signin-client_id" content="937637907029-onlu3cup547k4or5rupnprghefmegacj.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
     </head>
     <body>
         <h1>Hello Alex</h1>
+        <div class="right">
+            <div id="profile" style="margin: 0 20px;">
+                <b class="name"></b><br/>
+                <i class="email"></i>
+              </div>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </div>
         
+        <ul class="quotes">
+            <% for(var i=0; i<data.length; i++) {%>
+                <li class="quote">
+                    <span><%= data[i].name %></span>
+                </li>
+            <% } %>
+        </ul>
         <script src="index.js" async defer></script>
     </body>
 </html>
